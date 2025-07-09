@@ -1,0 +1,1226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #f0eeee, #fff, #fff, #fff);
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    background-attachment: fixed;
+}
+
+button {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #a4a3a3;
+}
+
+header {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 30px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+header .Container {
+    max-width: 750px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header .Container ul {
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    border-radius: 5em;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5em;
+    cursor: pointer;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0.55));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: inset 10px 10px 19px rgba(239, 238, 238, 0.9),
+        -10px -10px 19px rgba(239, 238, 238, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-clip: padding-box;
+}
+
+header .Container ul::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0.4));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    pointer-events: none;
+}
+
+header .Container ul .camera {
+    display: none;
+}
+
+header .Container ul.shrink .camera {
+    content: "";
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #242425, #ffffff);
+    box-shadow: 0 0 8px #2600ff88;
+    margin-left: auto;
+    margin-right: 0.5em;
+    align-self: center;
+}
+
+header .Container ul.shrink {
+    width: 100px;
+    height: 35px;
+    padding: 0;
+    transform: translateY(-20px);
+    background: linear-gradient(135deg,
+            rgba(240, 240, 240, 0.65),
+            rgba(255, 255, 255, 0.55));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: inset 2px 2px 19px rgba(183, 183, 183, 0.7),
+        -0px -0px 19px rgba(199, 199, 199, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-clip: padding-box;
+}
+
+header .Container ul.shrink:hover {
+    width: 90%;
+    height: auto;
+    transform: translateY(0);
+    padding: 1.5em;
+    background-clip: padding-box;
+}
+
+header .Container ul.shrink:hover li {
+    display: flex;
+}
+
+header .Container ul.shrink:hover .camera {
+    display: none;
+}
+
+header .Container ul.shrink li {
+    display: none;
+}
+
+header .Container .ContactInfor {
+    width: 30%;
+}
+
+header .Container ul li {
+    margin-bottom: 0.2em;
+    font-size: 1.1em;
+}
+
+header .Container:hover ul li a {
+    color: #cfcece;
+}
+
+header .Container ul li a:hover {
+    color: #4b4949 !important;
+}
+
+header .Container ul:hover {
+    box-shadow: 10px 10px 19px #e5e5e5,
+        -10px -10px 19px #ebebeb;
+}
+
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #ffffff;
+    animation: typing 3s steps(40, end), blink 0.55s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 45%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+}
+
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.starfield::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background-image: radial-gradient(#00000055 1px, transparent 2px);
+    background-size: 20px 20px;
+    animation: moveStars 90s linear infinite;
+    opacity: 0.2;
+    filter: blur(0.4px);
+}
+
+@keyframes moveStars {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-10%, -20%);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.8s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-down {
+    animation: fadeDown 0.8s ease-out forwards;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    margin-top: 105px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main .Section1 {
+    max-width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    height: calc(100vh - 105px);
+    padding-bottom: 3em;
+}
+
+.Section1 .Information {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Section1 .Information .Contain_img {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.Section1 .Information .Contain_img:hover {
+    box-shadow: 10px 10px 19px rgba(218, 218, 218, 0.7),
+        -10px -10px 19px rgba(216, 214, 214, 0.7);
+}
+
+.Section1 .Information .Contain_img img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+.Section1 .Information h3 {
+    font-size: 2em;
+    color: #262626;
+    margin-bottom: 0.5em;
+}
+
+.Section1 .Information h3 span {
+    color: rgb(249, 80, 80);
+    margin-right: 0.2em;
+}
+
+.Section1 .Information h2 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+}
+
+.Section1 .Information p {
+    font-size: 1.2em;
+    width: 45%;
+    color: #a7a3a3;
+    text-align: center;
+}
+
+.Section1 .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0 3em;
+}
+
+.Section1 .Btn button {
+    padding: 0.4em;
+    border-radius: 4em;
+    margin: 0 0.8em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.Section1 .Btn .btn1 {
+    background-color: #262626;
+    color: white;
+    padding-right: 0.8em;
+    border: 1px solid #262626;
+}
+
+.Section1 .Btn .btn1:hover {
+    opacity: 0.7;
+}
+
+.Section1 .Btn .btn2 {
+    background-color: white;
+    color: #262626;
+    padding-left: 0.8em;
+    border: 1px solid #262626;
+}
+
+.Section1 .Btn .btn2:hover {
+    background-color: rgb(224, 224, 224);
+    color: #262626;
+    padding-left: 0.8em;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.Section1 .Btn button i {
+    padding: 0.7em;
+    background-color: white;
+    border-radius: 100%;
+    color: #262626;
+}
+
+.Section1 .Btn .btn1 i {
+    margin-right: 0.2em;
+}
+
+.Section1 .Btn .btn2 i {
+    margin-left: 0.2em;
+    background-color: rgb(224, 224, 224);
+    border-radius: 100%;
+    color: #262626;
+}
+
+.Section1 .BackgroundImg {
+    width: 90vw;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    filter: drop-shadow(0px 2px 5px rgba(255, 255, 255, 0.2));
+}
+
+.Section1 .BackgroundImg ul {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.15em;
+    justify-content: center;
+}
+
+.Section1 .BackgroundImg ul li {
+    transition: all 0.3s ease;
+}
+
+.Section1 .BackgroundImg ul li:hover {
+    scale: 1.15;
+    margin: 0 1.4em;
+}
+
+/* Hover cho từng nền tảng */
+.Section1 .BackgroundImg ul li.facebook:hover a {
+    color: #1877f2;
+    filter: drop-shadow(0 0 3px #3f89e991);
+}
+
+.Section1 .BackgroundImg ul li.zalo:hover a {
+    color: #0088ff;
+    filter: drop-shadow(0 0 3px #52a4ec);
+}
+
+.Section1 .BackgroundImg ul li.github:hover a {
+    color: #333;
+    filter: drop-shadow(0 0 3px #818181);
+}
+
+.Section1 .BackgroundImg ul li.linkedin:hover a {
+    color: #0077b5;
+    filter: drop-shadow(0 0 3px #64bcec);
+}
+
+.Section1 .BackgroundImg ul li.gmail:hover a {
+    color: #d93025;
+    filter: drop-shadow(0 0 3px #e4766e);
+}
+
+.Section1 .BackgroundImg ul li.phone:hover a {
+    color: #34a853;
+    filter: drop-shadow(0 0 3px #8dffac);
+}
+
+.Section1 .BackgroundImg ul li a {
+    margin: 0 1em;
+    color: #afaeae;
+}
+
+.Section1 .BackgroundImg span {
+    font-size: 1.5em;
+    color: #4c4c4c;
+    margin-bottom: 1em;
+}
+
+.Section2 {
+    margin: 6em 0 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Title {
+    width: 100%;
+    text-align: center;
+}
+
+.Title h2 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: #262626;
+    letter-spacing: 2px;
+}
+
+.Section2 .Title p {
+    color: #676666;
+    font-size: 1em;
+}
+
+.Section2 .Content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    max-width: 80vw;
+    margin: 1.5em auto;
+    text-align: justify;
+}
+
+.Section2 .Content .LeftContent {
+    width: 30%;
+}
+
+.Section2 .Content .RightContent {
+    padding: 0 3em 0 2em;
+    width: 60%;
+}
+
+.Section2 .Content .ContentSection li {
+    margin-top: 0.8em;
+}
+
+.Section2 .Content .ContentSection li a {
+    color: #0088ff;
+}
+
+.Section2 .Content .ContentSection h2 {
+    font-size: 1.5em;
+    color: #262626;
+}
+
+.Section2 .Content .ContentSection h3 {
+    font-size: 1.2em;
+    letter-spacing: 0;
+    color: #262626;
+}
+
+.Section2 .Content .ContentSection p {
+    margin: 0.3em 0;
+    font-size: 1.1em;
+    color: #808080;
+}
+
+.Line {
+    height: 60vh;
+    width: 1px;
+    margin: 3em 2em;
+    border-radius: 1em;
+    background-color: rgb(161, 160, 160);
+}
+
+.Section3 {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3em 0 4em;
+    text-align: center;
+}
+
+.Section3 .Content h3 {
+    font-size: 1.7em;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.Section3 .Content h2 {
+    font-size: 3.5em;
+    margin: 0.5em 0;
+    line-height: 1.2;
+    color: #262626;
+    letter-spacing: 4px;
+}
+
+.Section3 .Content button {
+    margin-top: 0.5em;
+    cursor: pointer;
+    padding: 0.7em 1.5em;
+    border-radius: 4em;
+    font-size: 1em;
+    letter-spacing: 2px;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.Section3 .Content button a {
+    color: white;
+}
+
+.Section3 .Content button:hover {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.Section3 .Content button:hover a {
+    color: black;
+}
+
+.Section3 .Frame {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.Section3 .Frame img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    animation: floatRandom 20s ease-in-out infinite alternate;
+    opacity: 0.9;
+}
+
+/* Vị trí ban đầu - tránh vùng giữa */
+.Section3 .Frame img:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: 4s;
+}
+
+.Section3 .Frame img:nth-child(2) {
+    top: 10%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.Section3 .Frame img:nth-child(3) {
+    width: 120px;
+    height: 120px;
+    top: 70%;
+    left: 5%;
+    animation-delay: 4s;
+}
+
+.Section3 .Frame img:nth-child(4) {
+    top: 75%;
+    left: 85%;
+    animation-delay: 3s;
+}
+
+.Section3 .Frame img:nth-child(5) {
+    top: 10%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.Section3 .Frame img:nth-child(6) {
+    top: 87%;
+    left: 55%;
+    animation-delay: 8s;
+}
+
+.Section3 .Frame img:nth-child(7) {
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 10%;
+    animation-delay: 6s;
+}
+
+.Section3 .Frame img:nth-child(8) {
+    top: 25%;
+    left: 85%;
+    animation-delay: 7s;
+}
+
+.Section3 .Frame img:nth-child(9) {
+    top: 85%;
+    left: 30%;
+    animation-delay: 8s;
+}
+
+/* Animation ngẫu nhiên có giới hạn */
+@keyframes floatRandom {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(20px, -15px) rotate(10deg);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) rotate(-10deg);
+    }
+
+    75% {
+        transform: translate(15px, 10px) rotate(8deg);
+    }
+
+    100% {
+        transform: translate(-15px, -20px) rotate(-5deg);
+    }
+}
+
+.Section4 {
+    margin: 8em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Section4 .Navigate {
+    max-width: 600px;
+    background-color: #262626;
+    border-radius: 8em;
+    display: flex;
+    color: rgb(174, 174, 174);
+}
+
+.Section4 .Navigate li.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+.Section4 ul.Websites,
+.Section4 ul.Apps,
+.Section4 ul.AI {
+    display: none;
+    margin-top: 2em;
+    max-width: 90vw;
+    overflow: hidden;
+    gap: 1em;
+    min-height: 65vh;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Section4 ul.active {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    max-width: 90vw;
+    padding: 0 2em;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.Apps, .AI {
+    font-size: 1.5em;
+    gap: 0 !important;
+}
+
+.Section4 .Navigate li {
+    padding: 1em 2em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+.Section4 .Navigate li:hover {
+    background-color: #262626;
+    color: rgb(255, 255, 255);
+}
+
+.Section4 .Items {
+    overflow-x: scroll !important;
+    display: flex;
+}
+
+.Section4 .Items li {
+    width: 30%;
+    margin: 0.5em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Section4 .Items li h3 {
+    margin-bottom: 1em;
+}
+
+.Section4 ul.active::-webkit-scrollbar {
+    display: none;              
+}
+
+.Section4 .Items li img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.Section5 {
+    width: 100%;
+    height: 100vh;
+}
+
+.Section5 .Container {
+    max-width: 80vw;
+    margin: 0 auto;
+    border-radius: 1em;
+    padding: 3em 5em 4em;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.65),
+            rgba(255, 255, 255, 0.55));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: inset 2px 2px 19px rgba(255, 255, 255, 0.9),
+        -0px -0px 19px rgba(199, 199, 199, 0.7);
+    background-clip: padding-box;
+}
+
+.Section5 .Container h3 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 0.8em;
+}
+
+.Section5 .Container p {
+    font-size: 1.2em;
+    text-align: justify;
+    margin-bottom: 0.5em;
+    letter-spacing: 1px;
+}
+
+.Section5 .Container li {
+    margin-bottom: 0.3em;
+}
+
+.Section6 {
+    width: 100%;
+    height: 76vh;
+    overflow: hidden;
+}
+
+.Section6 .Container {
+    max-width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Section6 .Container .Title {
+    width: 35%;
+    font-weight: bold;
+    text-align: left;
+    font-size: 4em;
+    line-height: 1.5;
+    padding-bottom: 1em;
+}
+
+.Section6 .Container .Content {
+    width: 65%;
+    height: 100%;
+    padding-left: 4em;
+    display: flex;
+}
+
+.Section6 .Container .Content ul li {
+    margin-bottom: 1em;
+}
+
+.Section6 .Container .Content ul li h3 {
+    margin-bottom: 0.3em;
+}
+
+.Section6 .Container .Content ul li P {
+    margin-bottom: 0.3em;
+}
+
+footer {
+    height: 75px;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    box-shadow: 10px 10px 19px #f0efef,
+        -10px -10px 19px #faf9f9;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        display: none;
+    }
+
+    main {
+        margin-top: 55px;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 80%;
+        }
+    }
+
+    main .Section1,
+    .Section2,
+    .Section3,
+    .Section4,
+    .Section5 {
+        max-width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .Section1 .Information .Contain_img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .Section1 .Information .Contain_img:hover span {
+        display: none;
+    }
+
+    .Section1 .Information .Contain_img img {
+        width: 250px;
+    }
+
+    .Section1 .Information h3 {
+        font-size: 2em;
+        color: #262626;
+        margin-bottom: 0.5em;
+    }
+
+    .Section1 .Information h3 span {
+        display: none;
+    }
+
+    .mobile {
+        display: flex !important;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .Section1 .Information h2 {
+        font-size: 4em;
+    }
+
+    .Section1 .Information p {
+        width: 75%;
+    }
+
+    .Section1 .Btn button {
+        padding: 0.6em;
+        margin: 0 0.5em;
+    }
+
+    .Section1 .BackgroundImg span {
+        display: none;
+    }
+
+    .Section1 .BackgroundImg ul {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 1.6em;
+        justify-content: center;
+    }
+
+    .Section1 .BackgroundImg ul li {
+        width: 30%;
+        display: flex;
+        margin-bottom: 0.5em;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Section1 .BackgroundImg ul li:hover {
+        scale: 1;
+        margin: 0;
+    }
+
+    .Section2 {
+        margin: 4em 0 2em;
+    }
+
+    .Title h2 {
+        font-size: 1.8em;
+    }
+
+    .Title p {
+        font-size: 1.2em !important;
+    }
+
+    .Section2 .Content {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        text-align: center;
+        max-width: 90vw;
+        overflow: hidden;
+        margin-top: 0;
+    }
+
+    .Section2 .Content .LeftContent {
+        width: 100%;
+    }
+
+    .Section2 .Content .RightContent {
+        padding: 0;
+        width: 100%;
+    }
+
+    .Section2 .Content .ContentSection li {
+        margin-top: 0.8em;
+    }
+
+    .Section2 .Content .ContentSection li a {
+        color: #0088ff;
+    }
+
+    .Section2 .Content .ContentSection h2 {
+        display: none;
+    }
+
+    .Section2 .Content .ContentSection h3 {
+        font-size: 1.5em;
+        letter-spacing: 0;
+        color: #262626;
+    }
+
+    .Section2 .Content .ContentSection p {
+        margin: 0.3em 0;
+        font-size: 1.3em;
+        color: #808080;
+    }
+
+    .Line {
+        height: 1px;
+        width: 90%;
+        margin: 1.5em auto;
+    }
+
+    .Section3 {
+        margin: 6em 0 4em;
+        height: 80vh;
+    }
+
+    .Section3 .Content h3 {
+        font-size: 1.4em;
+        font-weight: normal;
+        line-height: 2;
+    }
+
+    .Section3 .Content h2 {
+        font-size: 2em;
+        margin: 0.5em 0;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+
+    .Section3 .Content button {
+        margin-top: 1em;
+        padding: 1em 2.5em;
+    }
+
+    .Section3 .Frame img {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        animation: floatRandom 20s ease-in-out infinite alternate;
+        opacity: 0.9;
+    }
+
+    /* Vị trí ban đầu - tránh vùng giữa */
+    .Section3 .Frame img:nth-child(1) {
+        top: 10%;
+        left: 5%;
+        animation-delay: 4s;
+    }
+
+    .Section3 .Frame img:nth-child(2) {
+        top: 12%;
+        left: 75%;
+        animation-delay: 4s;
+    }
+
+    .Section3 .Frame img:nth-child(3) {
+        width: 120px;
+        height: 120px;
+        top: 75%;
+        left: 0%;
+        animation-delay: 4s;
+    }
+
+    .Section3 .Frame img:nth-child(4) {
+        display: none;
+    }
+
+    .Section3 .Frame img:nth-child(5) {
+        top: 5%;
+        left: 45%;
+        animation-delay: 4s;
+    }
+
+    .Section3 .Frame img:nth-child(6) {
+        top: 77%;
+        left: 75%;
+        animation-delay: 8s;
+    }
+
+    .Section3 .Frame img:nth-child(7) {
+        display: none;
+    }
+
+    .Section3 .Frame img:nth-child(8) {
+        display: none;
+    }
+
+    .Section3 .Frame img:nth-child(9) {
+        top: 85%;
+        left: 42%;
+        animation-delay: 8s;
+    }
+
+    .Section4 {
+        margin: 8em 0 0em;
+        height: 95vh;
+    }
+
+    #ChitietDuan {
+        transform: translateY(2vh) !important;
+    }
+
+    .Section5 .Container {
+        border-radius: unset;
+        padding: 3em 0em 4em;
+        background: transparent;
+        box-shadow: unset;
+    }
+
+    .Section5 .Container p {
+        font-size: 1.3em;
+    }
+
+    .Section5 .Container li {
+        font-size: 1.3em;
+    }
+
+    .Section6 {
+        width: 100%;
+        height: 100vh;
+        margin-top: 3em;
+        overflow: hidden;
+    }
+
+    .Section6 .Container {
+        max-width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .Section6 .Container .Title {
+        width: 90%;
+        font-weight: bold;
+        text-align: left;
+        font-size: 1.8em;
+        line-height: 1;
+        padding-bottom: 0;
+    }
+
+    .Section6 .Container .Content {
+        width: 90%;
+        padding-left: 0;
+    }
+
+    .Section6 .Container .Content ul li {
+        margin-bottom: 1em;
+    }
+
+    .Section6 .Container .Content ul li h3 {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+
+    .Section6 .Container .Content ul li p {
+        font-size: 1.2em;
+        margin-bottom: 0.3em;
+    }
+}
