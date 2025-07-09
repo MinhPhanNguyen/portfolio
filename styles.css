@@ -5,6 +5,10 @@
     transition: all 0.3s ease-in-out;
 }
 
+i {
+    display: none !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -762,7 +766,8 @@ main .Section1 {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
-.Apps, .AI {
+.Apps,
+.AI {
     font-size: 1.5em;
     gap: 0 !important;
 }
@@ -799,7 +804,7 @@ main .Section1 {
 }
 
 .Section4 ul.active::-webkit-scrollbar {
-    display: none;              
+    display: none;
 }
 
 .Section4 .Items li img {
@@ -1002,7 +1007,7 @@ footer p {
     .Section1 .BackgroundImg ul li {
         width: 30%;
         display: flex;
-        margin-bottom: 0.5em;
+        margin: 0.5em 0.2em 0;
         align-items: center;
         justify-content: center;
     }
@@ -1158,8 +1163,38 @@ footer p {
     }
 
     .Section4 {
-        margin: 8em 0 0em;
-        height: 95vh;
+        margin: 8em 0 8em;
+        height: auto;
+    }
+
+    .Section4 ul.Websites,
+    .Section4 ul.Apps,
+    .Section4 ul.AI {
+        max-width: 100vw;
+    }
+
+    .Section4 ul.active {
+        max-width: 100vw;
+    }
+
+    .Section4 .Items li {
+        width: 100%;
+        margin: 0em;
+        border-radius: 0.5em;
+    }
+
+    .Section4 .Items li h3 {
+        margin-bottom: 1em;
+    }
+
+    .Section4 ul.active::-webkit-scrollbar {
+        display: none;
+    }
+
+    .Section4 .Items li img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
     }
 
     #ChitietDuan {
