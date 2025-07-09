@@ -774,7 +774,7 @@ main .Section1 {
 
 .Section4 .Navigate li {
     padding: 1em 2em;
-    font-size: 1em;
+    font-size: 0.9em;
     cursor: pointer;
     border-radius: 8em;
 }
@@ -853,7 +853,7 @@ main .Section1 {
 
 .Section6 {
     width: 100%;
-    height: 76vh;
+    height: auto;
     overflow: hidden;
 }
 
@@ -987,7 +987,7 @@ footer p {
     }
 
     .Section1 .Btn button {
-        padding: 0.6em;
+        padding: 0.8em;
         margin: 0 0.5em;
     }
 
@@ -996,11 +996,11 @@ footer p {
     }
 
     .Section1 .BackgroundImg ul {
-        width: 90%;
+        width: 100%;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        font-size: 1.6em;
+        font-size: 1.4em;
         justify-content: center;
     }
 
@@ -1085,13 +1085,13 @@ footer p {
     }
 
     .Section3 .Content h3 {
-        font-size: 1.4em;
+        font-size: 1.2em;
         font-weight: normal;
         line-height: 2;
     }
 
     .Section3 .Content h2 {
-        font-size: 2em;
+        font-size: 1.5em;
         margin: 0.5em 0;
         line-height: 1.5;
         letter-spacing: 1px;
@@ -1113,21 +1113,21 @@ footer p {
 
     /* Vị trí ban đầu - tránh vùng giữa */
     .Section3 .Frame img:nth-child(1) {
-        top: 10%;
+        top: 5%;
         left: 5%;
         animation-delay: 4s;
     }
 
     .Section3 .Frame img:nth-child(2) {
-        top: 12%;
+        top: 7%;
         left: 75%;
         animation-delay: 4s;
     }
 
     .Section3 .Frame img:nth-child(3) {
-        width: 120px;
-        height: 120px;
-        top: 75%;
+        width: 100px;
+        height: 100px;
+        top: 80%;
         left: 0%;
         animation-delay: 4s;
     }
@@ -1137,13 +1137,13 @@ footer p {
     }
 
     .Section3 .Frame img:nth-child(5) {
-        top: 5%;
+        top: 8%;
         left: 45%;
         animation-delay: 4s;
     }
 
     .Section3 .Frame img:nth-child(6) {
-        top: 77%;
+        top: 80%;
         left: 75%;
         animation-delay: 8s;
     }
@@ -1183,6 +1183,11 @@ footer p {
         border-radius: 0.5em;
     }
 
+    .Section4 .Navigate li {
+        font-size: 0.8em;
+    }
+
+
     .Section4 .Items li h3 {
         margin-bottom: 1em;
     }
@@ -1206,6 +1211,7 @@ footer p {
         padding: 3em 0em 4em;
         background: transparent;
         box-shadow: unset;
+        text-align: left !important;
     }
 
     .Section5 .Container p {
@@ -1218,7 +1224,7 @@ footer p {
 
     .Section6 {
         width: 100%;
-        height: 100vh;
+        height: auto;
         margin-top: 3em;
         overflow: hidden;
     }
