@@ -3,370 +3,1244 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nguyễn Phan Đức Minh</title>
+        <title>Nguyễn Phan Đức Minh - AI Engineer Portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet"
-            href="/fontawesome-free-6.7.2-web/css/all.min.css">
         <link
-            href="https://fonts.googleapis.com/css2?family=Lobster&family=Menbere:wght@100..700&family=Oswald:wght@200..700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet"
+            href="fontawesome-free-6.7.2-web/css/all.min.css">
+        <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-dark: #004499;
+            --primary-light: #3388ff;
+            --accent-color: #00d4aa;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #edf2f7;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); */
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Profile Section */
+        .profile-header {
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 0;
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: url('images/Background.png') center/cover;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .profile-info h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .profile-info h2 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-left: 2px;
+            line-height: 1.3;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            width: 16px;
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections Grid */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 10px 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            position: relative;
+        }
+
+        /* About Section */
+        .objective-content {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .objective-content p {
+            margin-bottom: 15px;
+        }
+
+        .objective-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .objective-content strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Education Section */
+        .education-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .education-period {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .education-school {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .education-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .project-item {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-header {
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .project-period {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .project-company {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .project-role {
+            background: linear-gradient(135deg, var(--accent-color), #00b894);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-description ul {
+            padding-left: 20px;
+        }
+
+        .project-description li {
+            margin-bottom: 8px;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--bg-tertiary), #e2e8f0);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .certificate-item {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 20px;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .certificate-image {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--bg-tertiary), #f8fafc);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--border-color);
+        }
+
+        .certificate-content {
+            flex: 1;
+        }
+
+        .certificate-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .certificate-issuer {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .certificate-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .certificate-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        /* Awards Section */
+        .awards-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .award-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateX(5px);
+        }
+
+        .award-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .award-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .award-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .profile-top {
+                gap: 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .profile-header {
+                padding: 20px;
+            }
+
+            .profile-top {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .profile-info h1 {
+                font-size: 1.9rem;
+                line-height: 1.2;
+            }
+
+            .profile-info h2 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin-top: 15px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .certificate-image {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+        @media (max-width: 480px) {
+            .profile-header {
+                padding: 20px;
+            }
+
+            .profile-info h1 {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+
+            .profile-info h2 {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .project-item {
+                padding: 20px;
+            }
+
+            .profile-image {
+                width: 90px;
+                height: 90px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+        }
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation delays */
+        .section-card:nth-child(1) { animation-delay: 0.1s; }
+        .section-card:nth-child(2) { animation-delay: 0.2s; }
+        .section-card:nth-child(3) { animation-delay: 0.3s; }
+        .section-card:nth-child(4) { animation-delay: 0.4s; }
+        .section-card:nth-child(5) { animation-delay: 0.5s; }
+        .section-card:nth-child(6) { animation-delay: 0.6s; }
+        .section-card:nth-child(7) { animation-delay: 0.7s; }
+    </style>
     </head>
     <body>
-        <div class="starfield"></div>
-
-        <header>
-            <div class="Container fade-down">
-                <ul id="mainHeader">
-                    <div class="camera"></div>
-                    <li><a href="#Gioithieu">Giới thiệu</a></li>
-                    <li><a href="#Bangcap">Bằng cấp</a></li>
-                    <li><a href="#Duan">Dự án</a></li>
-                    <li><a href="#Kinang">Kĩ năng</a></li>
-                    <li><a href="#Dinhhuong">Định hướng</a></li>
-                    <li><a href="#Contact">Liên hệ</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <main>
-            <div class="Container">
-                <div id="Gioithieu" class="MoveTo" style="transform: translateY(-20vh);"></div>
-                <div class="Section1">
-                    <div class="Information fade-up">
-                        <div class="Contain_img">
-                            <img src="images/background.jpg" alt>
-                        </div>
-
-                        <h3 class="typing" id="Contact">Nguyễn Phan Đức
-                            Minh <span> - Software Engineer</span></h3>
-                        <p>
-                            Lập trình viên đam mê sự sáng tạo, luôn
-                            hướng tới việc tối ưu trải nghiệm người dùng và
-                            không ngừng học hỏi các công nghệ mới. Bên cạnh đó,
-                            em cũng yêu thích
-                            việc biến ý tưởng thành giao diện sống động trên web
-                            và mobile, tạo nên sự khác biệt trong từng sản phẩm.
-                        </p>
-                    </div>
-
-                    <div class="Btn fade-up">
-                        <button class="btn1"><a href="#Bangcap"> <i
-                                class="fa-solid fa-circle-info"></i> Hồ sơ năng
-                            lực</a></button>
-                        <button class="btn2"><a href="https://zalo.me/0934190061">Liên hệ ngay <i
-                                class="fa-solid fa-arrow-right"></i></a></button>
-                    </div>
-
-                    <div class="BackgroundImg fade-up">
-                        <span>Thông tin liên hệ</span>
-                        <ul class="desktop">
-                            <li class="phone"><a href="tel:0934190061"><i
-                                        class="fa-solid fa-phone"></i>
-                                    Phone</a></li>
-                            <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100083158514915"><i
-                                        class="fa-brands fa-facebook"></i>
-                                    Facebook</a></li>
-                            <li class="zalo"><a href="https://zalo.me/0934190061"><i
-                                        class="fa-solid fa-z"></i> Zalo</a></li>
-                            <li class="linkedin"><a href="https://www.linkedin.com/in/minhphannguyen/"><i
-                                        class="fa-brands fa-linkedin"></i>
-                                    Linkedin</a></li>
-                            <li class="github"><a href="https://github.com/MinhPhanNguyen"><i
-                                        class="fa-brands fa-github"></i>
-                                    Github</a></li>
-                            <li class="gmail"><a href="mailto:SWminh0918195615@gmail.com"><i
-                                        class="fa-solid fa-envelope"></i>
-                                    Gmail</a></li>
-                        </ul>
-
-                        <ul class="mobile">
-                            <li class="phone"><a href="tel:0934190061"><i
-                                        class="fa-solid fa-phone"></i>
-                                    Phone</a></li>
-                            <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100083158514915"><i
-                                        class="fa-brands fa-facebook"></i>
-                                    Facebook</a></li>
-                            <li class="zalo"><a href="https://zalo.me/0934190061"><i
-                                        class="fa-solid fa-z"></i> Zalo</a></li>
-                            <li class="linkedin"><a href="https://www.linkedin.com/in/minhphannguyen/"><i
-                                        class="fa-brands fa-linkedin"></i>
-                                    Linkedin</a></li>
-                            <li class="github"><a href="https://github.com/MinhPhanNguyen"><i
-                                        class="fa-brands fa-github"></i>
-                                    Github</a></li>
-                            <li class="gmail"><a href="mailto:SWminh0918195615@gmail.com"><i
-                                        class="fa-solid fa-envelope"></i>
-                                    Gmail</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div id="Bangcap" class="MoveTo" style="transform: translateY(0);"></div>
-                <div class="Section2">
-                    <div class="Title">
-                        <h2>Bằng cấp</h2>
-                        <p>Các bằng hiện tại và thành tựu đạt được</p>
-                    </div>
-
-                    <div class="Content">
-                        <ul class="LeftContent ContentSection">
-                            <h2>Bằng cấp / Vị trí</h2>
-                            <li>
-                                <h3>UIT - Đại học quốc gia TP.Hồ Chí Minh</h3>
-                                <p>- Bằng đại học</p>
-                                <p>- GPA: 3.75/4.0</p>
-                                <p>- Đang trong quá trình (Năm 4 /
-                                    2022-2026)</p>
-                            </li>
-                            <li>
-                                <h3>UIT - Đại học quốc gia TP.Hồ Chí Minh</h3>
-                                <p>- Bằng thạc sĩ</p>
-                                <p>- Dự định: 12/2026</p>
-                            </li>
-                            <li>
-                                <h3>UIT - Đại học quốc gia TP.Hồ Chí Minh</h3>
-                                <p>- Trưởng nhóm nghiên cứu khoa học</p>
-                                <p>- YOE: 1.5 năm</p>
-                            </li>
-                            <li>
-                                <h3>HUTECH - Đại học công nghệ Sài Gòn</h3>
-                                <p>- Trưởng nhóm đổi mới sáng tạo</p>
-                                <p>- YOE: 2 năm</p>
-                            </li>
-                        </ul>
-
-                        <div class="Line"></div>
-
-                        <ul class="RightContent ContentSection">
-                            <h2>Thành tựu</h2>
-                            <li>
-                                <h3>Giải tài năng trẻ Cuộc thi cấp thành phố
-                                    IT-Got Talent - 12/2024 && Xuất bản bài báo
-                                    về Ứng dụng cho cộng đồng - 5/2025</h3>
-                                <p>- Dự án Website, Ứng dụng tìm kiếm nhà vệ
-                                    sinh RestroomFinder</p>
-                                <p>- Github: <a
-                                        href>https://github.com/MinhPhanNguyen/RestroomFinder</a></p>
-                            </li>
-                            <li>
-                                <h3>Xuất bản bài báo về Ứng dụng cho nông nghiệp
-                                    - 6/2025</h3>
-                                <p>- App hỗ trợ nông dân nhận diện bệnh cây
-                                    trồng</p>
-                                <p>- Github: Dự án đang tiến hành cải tiến<a href></a></p>
-                            </li>
-                            <li>
-                                <h3>Xuất bản bài báo về Ứng dụng cho y tế -
-                                    3/2025</h3>
-                                <p>- App phát hiện tiểu đường qua võng mạc</p>
-                                <p>- Github: <a
-                                        href>https://github.com/MinhPhanNguyen/diabetic-retinopathy-3d-generate</a></p>
-                            </li>
-                            <li>
-                                <h3>Xuất bản bài báo về Ứng dụng cho y tế -
-                                    5/2025</h3>
-                                <p>- Website, App phát hiện ung thư phổi qua ảnh
-                                    CT scan</p>
-                                <p>- Github: <a
-                                        href>https://github.com/MinhPhanNguyen/LungCancer</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div id="Duan" class="MoveTo" style="transform: translateY(0);"></div>
-                <div class="Section3">
-                    <div class="Frame">
-                        <img src="images/chatgpt.png" alt>
-                        <img src="images/css.png" alt>
-                        <img src="images/html.png" alt>
-                        <img src="images/js.png" alt>
-                        <img src="images/py.png" alt>
-                        <img src="images/ts.png" alt>
-                        <img src="images/tourch.png" alt>
-                        <img src="images/scss.png" alt>
-                        <img src="images/react.png" alt>
-                    </div>
-
-                    <div class="Content">
-                        <h3>Tổng quan dự án</h3>
-                        <h2>30+ Websites, Apps and AI</h2>
-                        <h2>10+ Khách Hàng Thân Thiết</h2>
-                        <h2>1+ YOE Freelancer</h2>
-                        <button><a href="#ChitietDuan">Chi tiết <i
-                                    class="fa-solid fa-down-long"></i></a></button>
-                    </div>
-                </div>
-
-                <div id="ChitietDuan" class="MoveTo"
-                    style="transform: translateY(-2vh);"></div>
-                <div class="Section4">
-                    <ul class="Navigate">
-                        <li>Websites</li>
-                        <li>Apps</li>
-                        <li>AI Projects</li>
-                    </ul>
-
-                    <ul class="Websites Items">
-                        <li>
-                            <h3>LungCancer</h3>
-                            <img src="images/lung.png" alt>
-                        </li>
-                        <li>
-                            <h3>RestroomFinder</h3>
-                            <img src="images/restroom.png" alt>
-                        </li>
-                        <li>
-                            <h3>CODEPROTALK</h3>
-                            <img src="images/codeprotalk.png" alt>
-                        </li>
-                        <li>
-                            <h3>MAZDA</h3>
-                            <img src="images/mazda.png" alt>
-                        </li>
-                        <li>
-                            <h3>NikeStore</h3>
-                            <img src="images/nike.jpg" alt>
-                        </li>
-                        <li>
-                            <h3>MEME</h3>
-                            <img src="images/labubu.png" alt>
-                        </li>
-                        <li>
-                            <h3>Truyện tranh</h3>
-                            <img src="images/truyen.jpg" alt>
-                        </li>
-                        <li>
-                            <h3>Proteccons</h3>
-                            <img src="images/proteccon.png" alt>
-                        </li>
-                        <li>
-                            <h3>TVL Construction</h3>
-                            <img src="images/tvl.png" alt>
-                        </li>
-                    </ul>
-
-                    <ul class="Apps" id="app-status">
-                        Đang thêm các dự án khác!!!
-                    </ul>
-
-                    <ul class="AI Items">
-                        Đang thêm các dự án khác!!!
-                    </ul>
-                </div>
-
-                <div id="Kinang" class="MoveTo"
-                    style="transform: translateY(-10vh);"></div>
-                <div class="Section5">
-                    <div class="Container">
-                        <h3>Kĩ năng</h3>
-                        <p><strong>Frontend:</strong> HTML, CSS, JavaScript,
-                            SASS/SCSS, Bootstrap, Tailwind CSS, ReactJS, React
-                            Native, Vite, Figma, Canva</p>
-                        <p><strong>Backend:</strong> PHP (basic), MySQL, SQL,
-                            Flask,
-                            Node.js (basic), C#</p>
-                        <p><strong>AI/ML:</strong> PyTorch, NumPy, Pandas,
-                            Matplotlib, OpenCV, scikit-learn, Transformers
-                            (Hugging
-                            Face)</p>
-                        <p><strong>Ngôn ngữ:</strong> Vietnamese (Native),
-                            English
-                            (Intermediate - B2)</p>
-                        <p><strong>Kỹ năng khác:</strong></p>
-                        <ul>
-                            <li>- Tiếp thu nhanh</li>
-                            <li>- Chủ động và năng động</li>
-                            <li>- Tự tạo động lực</li>
-                            <li>- Giải quyết vấn đề hiệu quả</li>
-                            <li>- Kỹ năng giao tiếp tốt</li>
-                            <li>- Làm việc nhóm tốt</li>
-                            <li>- Dễ dàng thích nghi</li>
-                            <li>- Luôn học hỏi và phát triển bản thân</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div id="Dinhhuong" class="MoveTo"
-                    style="transform: translateY(-15vh);"></div>
-                <div class="Section6">
-                    <div class="Container">
-                        <div class="Title">
-                            Định Hướng Phát Triển
-                        </div>
-
-                        <div class="Line"></div>
-
-                        <div class="Content">
-                            <ul>
-                                <li>
-                                    <h3>07/2025 – 01/2026:</h3>
-                                    <p>– Hoàn thiện đồ án chuyên ngành</p>
-                                    <p>– Thi và đạt chứng chỉ IELTS</p>
-                                    <p>– Công bố 1–2 bài báo khoa học
-                                        (paper)</p>
-                                    <p>– Tìm được công việc phù hợp với chuyên
-                                        môn</p>
-                                    <p>– Phát triển 1 dự án đóng góp cho cộng
-                                        đồng</p>
-                                </li>
-                                <li>
-                                    <h3>02/2026 – 06/2026:</h3>
-                                    <p>– Hoàn thiện đồ án tốt nghiệp</p>
-                                    <p>– Tốt nghiệp đại học</p>
-                                    <p>– Nhập học bậc thạc sĩ (nếu đủ điều kiện
-                                        và thời gian)</p>
-                                    <p>– Đạt trình độ Junior trong một lĩnh vực
-                                        chuyên sâu</p>
-                                    <p>– Công bố thêm 1–2 bài báo khoa học</p>
-                                </li>
-                                <li>
-                                    <h3>***Mục tiêu sẽ được cập nhật liên
-                                        tục</h3>
-                                </li>
-                            </ul>
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="profile-header fade-in">
+                <div class="profile-top">
+                    <div class="profile-image"></div>
+                    <div class="profile-info">
+                        <h1>Nguyễn Phan Đức Minh</h1>
+                        <h2>AI Engineer / Research</h2>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>0934 1900 61</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a
+                                    href="mailto:SWminh0918195615@gmail.com">SWminh0918195615@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hồ Chí Minh, Việt Nam</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <a
+                                    href="https://www.linkedin.com/in/minhphannguyen/"
+                                    target="_blank">linkedin.com/in/minhphannguyen/</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <a
+                                    href="https://minhphannguyen.github.io/portfolio/"
+                                    target="_blank">minhphannguyen.github.io/portfolio/</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/MinhPhanNguyen"
+                                    target="_blank">github.com/MinhPhanNguyen</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
 
-        <footer>
-            <p>© MinhNguyen 2025. All rights reserved by</p>
-        </footer>
+            <div class="sections-grid">
+                <!-- About Section -->
+                <div class="section-card fade-in">
+                    <h2 class="section-title">ABOUT</h2>
+                    <div class="objective-content">
+                        <p>I am an AI Engineer passionate about building
+                            intelligent systems that create real-world impact in
+                            healthcare, agriculture, and IoT. With hands-on
+                            experience in deep learning, computer vision, and
+                            time series analysis, I have led multiple projects
+                            from data collection and preprocessing to model
+                            deployment on real-time devices.</p>
+
+                        <p>My work includes developing high-accuracy AI models
+                            (up to 99%) for medical diagnosis, agricultural
+                            disease detection, and human activity recognition
+                            using multi-modal data fusion (Wi-Fi CSI + depth
+                            images). I have experience integrating AI solutions
+                            into web, mobile, and embedded systems, optimizing
+                            for accuracy, latency, and user accessibility.</p>
+
+                        <p>I am also a published author in AI-driven healthcare
+                            and smart agriculture, and I thrive in research,
+                            problem-solving, and cross-functional collaboration.
+                            My goal is to leverage AI to solve complex
+                            challenges and bring innovative, practical solutions
+                            to life.</p>
+
+                        <p><strong>Specialties:</strong> Deep Learning (PyTorch,
+                            CNN, LSTM, ViT, SE-ResNet, MobileOne), Computer
+                            Vision, IoT AI Deployment, Data Processing, and API
+                            Integration.</p>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="section-card fade-in">
+                    <h2 class="section-title">EDUCATION</h2>
+                    <div class="education-item">
+                        <div class="education-period">Aug 2022 - June 2026</div>
+                        <div class="education-school">Ho Chi Minh City
+                            University of Technology</div>
+                        <div class="education-details">
+                            Major: Artificial Intelligence<br>
+                            GPA: 3.75/4.0
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="section-card fade-in">
+                    <h2 class="section-title">PROJECTS</h2>
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">DurNet: Deep Learning
+                                    Model for Durian Leaf Disease Classification
+                                    and Mobile Deployment</div>
+                                <div class="project-period">Oct 2025 -
+                                    Present</div>
+                                <div class="project-company">
+                                    <i class="fas fa-university"></i>
+                                    Associated with HUTECH - Ho Chi Minh City
+                                    University of Technology
+                                </div>
+                            </div>
+                            <div class="project-role">Lead AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Collected and curated the VNDurLeaf
+                                        dataset (4,729 images, 5 provinces)</li>
+                                    <li>Trained benchmark models —
+                                        EfficientNet-B0/B3 with spatial
+                                        attention, MobilePlantViT, and Xception
+                                        (for performance comparison before
+                                        designing DurNet)</li>
+                                    <li>Designed DurNet, a lightweight hybrid
+                                        model combining MobileNetV3-Small and
+                                        Tiny ViT architectures</li>
+                                    <li>Achieved 94% accuracy, outperforming all
+                                        benchmark models by +8–19%</li>
+                                    <li>Integrated the model into the
+                                        DurianGuard mobile app for real-time
+                                        detection and geo-tracking</li>
+                                    <li>Produced a first-author paper submitted
+                                        to REV-ECIT 2025 and ICAICC</li>
+                                </ul>
+                                <a
+                                    href="https://github.com/MinhPhanNguyen/DurNet_VNDurLeaf_DurianGuard_Tool"
+                                    class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                    Repository
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">DraFruitNet: A Deep
+                                    Learning Framework for Dragon Fruit Disease
+                                    Classification and Deployment</div>
+                                <div class="project-period">Aug 2025 - Oct
+                                    2025</div>
+                                <div class="project-company">
+                                    <i class="fas fa-university"></i>
+                                    Associated with University of Information
+                                    Technology
+                                </div>
+                            </div>
+                            <div class="project-role">Lead AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Built a comprehensive dragon fruit
+                                        disease dataset across multiple
+                                        Vietnamese provinces</li>
+                                    <li>Applied Roboflow for data labeling,
+                                        preprocessing, and augmentation for
+                                        model robustness</li>
+                                    <li>Trained and benchmarked MobileOne-S2
+                                        (94%), SE-ResNet152D (96%), and ViT-16
+                                        (98%) under real field conditions</li>
+                                    <li>Deployed optimized models to mobile,
+                                        web, and embedded systems for on-device
+                                        detection</li>
+                                    <li>Conducted field testing and improved
+                                        inference speed and usability based on
+                                        farmer feedback</li>
+                                    <li>Co-authored a paper submitted to
+                                        REV-ECIT 2025</li>
+                                </ul>
+                                <a
+                                    href="https://github.com/MinhPhanNguyen/Dragon_Fruit_Application_And_Code"
+                                    class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                    Repository
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">WiVi32-Count: Dataset
+                                    and Dual-Modal Deep Learning Using Wireless
+                                    Signals and Computer Vision</div>
+                                <div class="project-period">July 2025 - Oct
+                                    2025</div>
+                                <div class="project-company">
+                                    <i class="fas fa-university"></i>
+                                    Associated with University of Information
+                                    Technology
+                                </div>
+                            </div>
+                            <div class="project-role">Lead AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Studied prior works on WiFi-based and
+                                        vision-based crowd counting to design a
+                                        hybrid 0–7 people estimation
+                                        framework</li>
+                                    <li>Collected and labeled 60k+ multimodal
+                                        samples using Roboflow, synchronizing
+                                        CSI and vision data</li>
+                                    <li>Reproduced FreeCount, WiCount, and
+                                        multiple CSI baselines (CNN, LSTM,
+                                        Transformer) for benchmark
+                                        comparison</li>
+                                    <li>Proposed three novel fusion
+                                        architectures combining CSI and vision
+                                        features at multiple stages</li>
+                                    <li>Achieved MAE = 0.15, outperforming all
+                                        baselines in both counting and
+                                        localization accuracy</li>
+                                    <li>Authored a paper currently under
+                                        submission to a Rank B conference</li>
+                                </ul>
+                                <a
+                                    href="https://github.com/MinhPhanNguyen/WIFIVision-Counting-Tools"
+                                    class="github-link" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                    Repository
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">WiFi and Depth Fusion
+                                    Model for Human Activity Recognition</div>
+                                <div class="project-period">Mar 2025 - June
+                                    2025</div>
+                                <div class="project-company">
+                                    <i class="fas fa-university"></i>
+                                    Associated with University of Information
+                                    Technology
+                                </div>
+                            </div>
+                            <div class="project-role">Lead AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Investigated WiFi sensing and depth
+                                        vision for multimodal activity
+                                        recognition</li>
+                                    <li>Designed a dual-branch CNN-LSTM +
+                                        TinyMobileNetV3 architecture with
+                                        feature-level fusion</li>
+                                    <li>Explored concatenation,
+                                        self/cross-attention, AC-Mix, and FiLM;
+                                        proposed AC-Film, combining both</li>
+                                    <li>Achieved 99% accuracy, surpassing the
+                                        MMFi baseline by +2%</li>
+                                    <li>Deployed the model on real-time IoT
+                                        devices, validating low-latency
+                                        inference and robust performance</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">CodeProTalk —
+                                    AI-Powered Career & Learning Platform</div>
+                                <div class="project-period">Jun 2025 - Aug
+                                    2025</div>
+                                <div class="project-company">
+                                    <i class="fas fa-building"></i>
+                                    Associated with EduAE - Học đúng, Làm chuẩn,
+                                    Phỏng vấn tự tin
+                                </div>
+                            </div>
+                            <div class="project-role">AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Developed an AI-driven full-stack
+                                        platform integrating learning, practice,
+                                        and recruitment for IT learners</li>
+                                    <li>Built 3 core AI modules — AI Learning
+                                        Assistant, Career Recommender, and AI
+                                        Interview Simulator — with 1,826
+                                        technical questions across 233 IT
+                                        skills</li>
+                                    <li>Designed an AI-based career
+                                        recommendation system using Scikit-learn
+                                        + Content-Based Filtering, generating
+                                        personalized learning paths for 50+ IT
+                                        roles</li>
+                                    <li>Integrated GPT-4 for intelligent chat
+                                        guidance, XLM-RoBERTa for CV semantic
+                                        analysis, and Web Speech API for
+                                        real-time voice interviews with
+                                        automated scoring</li>
+                                    <li>Implemented microservices architecture
+                                        (4 services, 18 MongoDB models, 50+
+                                        APIs) for scalability and
+                                        modularity</li>
+                                    <li>Deployed a production-ready system with
+                                        optimized inference pipelines and
+                                        achieved 94% cross-platform performance
+                                        consistency</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">Lung Cancer Early
+                                    Detection in Medical</div>
+                                <div class="project-period">Mar 2025 - Jun
+                                    2025</div>
+                                <div class="project-company">
+                                    <i class="fas fa-university"></i>
+                                    Associated with HUTECH - Ho Chi Minh City
+                                    University of Technology
+                                </div>
+                            </div>
+                            <div class="project-role">Lead AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Researched and reproduced
+                                        state-of-the-art AI models for lung
+                                        cancer classification using
+                                        EfficientNet, MobileNet, and Vision
+                                        Transformers</li>
+                                    <li>Preprocessed CT and X-ray datasets
+                                        (IQ-OTH/NCCD, Kaggle) and optimized
+                                        pipelines to improve robustness and
+                                        accuracy</li>
+                                    <li>Proposed and fine-tuned novel
+                                        architectures, achieving up to 97%
+                                        accuracy while reducing latency and
+                                        GFLOPs</li>
+                                    <li>Integrated trained models (.pth) into a
+                                        real-time web and desktop application
+                                        for clinical prediction testing</li>
+                                    <li>Authored a LaTeX-based research paper
+                                        summarizing results for submission to
+                                        top-tier AI and medical journals</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-title">Restroom Finder</div>
+                                <div class="project-period">Dec 2024 - Apr
+                                    2025</div>
+                                <div class="project-company">
+                                    <i class="fas fa-building"></i>
+                                    Associated with EduAE - Học đúng, Làm chuẩn,
+                                    Phỏng vấn tự tin
+                                </div>
+                            </div>
+                            <div class="project-role">AI Engineer</div>
+                            <div class="project-description">
+                                <ul>
+                                    <li>Designed and implemented AI-powered
+                                        restroom monitoring using YOLO + OpenCV
+                                        for real-time people counting,
+                                        overcrowding alerts, and SOS
+                                        detection</li>
+                                    <li>Developed intelligent modules to analyze
+                                        restroom occupancy and cleanliness
+                                        status with live camera feeds</li>
+                                    <li>Integrated Flask/FastAPI-based
+                                        microservices for detection, monitoring,
+                                        and alert notification pipelines</li>
+                                    <li>Collaborated with the frontend and
+                                        backend teams to deploy real-time
+                                        dashboards and map-based visualization
+                                        (Map4D / Google Maps API)</li>
+                                    <li>Enhanced user experience with
+                                        multilingual support, e-wallet payments,
+                                        loyalty systems, and chatbot/voicebot
+                                        assistants</li>
+                                    <li>Focused on optimizing AI inference
+                                        latency and system scalability for
+                                        continuous real-world operation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="section-card fade-in">
+                    <h2 class="section-title">SKILLS</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-brain"></i> AI & ML</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Computer Vision</span>
+                                <span class="skill-tag">Time Series</span>
+                                <span class="skill-tag">Model Deployment</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Transfer Learning</span>
+                                <span class="skill-tag">Google Colab</span>
+                                <span class="skill-tag">Kaggle</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-database"></i> Data &
+                                Database</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Data
+                                    Preprocessing</span>
+                                <span class="skill-tag">Data Augmentation</span>
+                                <span class="skill-tag">API Development</span>
+                                <span class="skill-tag">Data Labeling
+                                    (Roboflow)</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-code"></i> Web & App</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">ReactJS</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">RESTful API
+                                    Integration</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-globe"></i> Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Vietnamese
+                                    (native)</span>
+                                <span class="skill-tag">English (B2 –
+                                    intermediate professional)</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3><i class="fas fa-users"></i> Others</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Teamwork</span>
+                                <span class="skill-tag">Self-learning</span>
+                                <span class="skill-tag">Presentation</span>
+                                <span class="skill-tag">Problem-solving</span>
+                                <span class="skill-tag">Time Management</span>
+                                <span class="skill-tag">Research Writing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificates Section -->
+                <div class="section-card fade-in">
+                    <h2 class="section-title">CERTIFICATES</h2>
+                    <div class="certificates-grid">
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-city"
+                                    style="font-size: 48px; color: #0066cc;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">Smart City 2025 –
+                                    Sáng kiến xây dựng thành phố thông
+                                    minh</div>
+                                <div class="certificate-issuer">SHTP Labs</div>
+                                <div class="certificate-date">Issued Nov
+                                    2025</div>
+                                <div class="certificate-description">
+                                    Chứng nhận Tham Gia Cuộc Thi Smart City
+                                    2025. Smart City 2025 là một sáng kiến toàn
+                                    diện nhằm phát triển các đô thị thông minh,
+                                    ứng dụng công nghệ số, Internet vật lý
+                                    (IoT), trí tuệ nhân tạo (AI) và dữ liệu lớn
+                                    (Big Data).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-brain"
+                                    style="font-size: 48px; color: #ff6b35;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">K-Tech AI
+                                    Hackathon</div>
+                                <div class="certificate-issuer">LIKELION
+                                    Vietnam</div>
+                                <div class="certificate-date">Issued Oct
+                                    2025</div>
+                                <div class="certificate-description">
+                                    Chứng nhận đạt Giải Khuyến Khích Cuộc Thi
+                                    K-Tech AI Hackathon 2025. Cuộc Thi K-Tech AI
+                                    Hackathon 2025, một sân chơi uy tín về công
+                                    nghệ và trí tuệ nhân tạo, nơi các đội thi
+                                    triển khai các giải pháp sáng tạo, ứng dụng
+                                    AI vào các vấn đề thực tế.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-university"
+                                    style="font-size: 48px; color: #e74c3c;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">HDBank
+                                    Hackathon</div>
+                                <div class="certificate-issuer">HDBank</div>
+                                <div class="certificate-date">Issued Sep
+                                    2025</div>
+                                <div class="certificate-description">
+                                    Chứng nhận TOP 100 Thí Sinh Xuất Sắc Nhất
+                                    HDBank Hackathon. HDBank Hackathon, một cuộc
+                                    thi sáng tạo công nghệ tài chính, nơi các
+                                    thí sinh phát triển các giải pháp đổi mới,
+                                    ứng dụng công nghệ số và trí tuệ nhân tạo để
+                                    giải quyết các thách thức trong lĩnh vực
+                                    ngân hàng.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-rocket"
+                                    style="font-size: 48px; color: #1e3a8a;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">NASA Space Apps
+                                    Challenge</div>
+                                <div class="certificate-issuer">NASA - National
+                                    Aeronautics and Space Administration</div>
+                                <div class="certificate-date">Issued Sep
+                                    2025</div>
+                                <div class="certificate-description">
+                                    Chứng nhận dự án Tham Gia Cuộc Thi NASA
+                                    Space Apps Challenge 2025. NASA Space Apps
+                                    Challenge 2025, một cuộc thi quốc tế về đổi
+                                    mới sáng tạo do NASA tổ chức, nơi các đội
+                                    thi phát triển các giải pháp công nghệ để
+                                    giải quyết các thách thức trong khám phá
+                                    không gian và ứng dụng khoa học trái đất.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-award"
+                                    style="font-size: 48px; color: #f39c12;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">KAZEN Club -
+                                    Community and Society</div>
+                                <div class="certificate-issuer">HUTECH - Ho Chi
+                                    Minh City University of Technology</div>
+                                <div class="certificate-date">Issued Jun
+                                    2025</div>
+                                <div class="certificate-description">
+                                    Chứng nhận Top 5 Bài Báo Xuất Sắc Nhất KAZEN
+                                    Club. Top 5 Bài Báo Xuất Sắc Nhất do KAZEN
+                                    Club bình chọn, ghi nhận những đóng góp nổi
+                                    bật trong việc nghiên cứu, viết và chia sẻ
+                                    các bài viết chuyên sâu về công nghệ, khoa
+                                    học và đổi mới sáng tạo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-trophy"
+                                    style="font-size: 48px; color: #27ae60;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">IT GOT
+                                    TALENT</div>
+                                <div class="certificate-issuer">HUTECH - Ho Chi
+                                    Minh City University of Technology</div>
+                                <div class="certificate-date">Issued Dec
+                                    2024</div>
+                                <div class="certificate-description">
+                                    Bằng khen giải Tài Năng Trẻ Cuộc Thi IT Got
+                                    Talent. Cuộc Thi IT Got Talent, một sân chơi
+                                    công nghệ uy tín dành cho các bạn trẻ đam mê
+                                    công nghệ thông tin, nơi các thí sinh thể
+                                    hiện năng lực sáng tạo, kỹ năng lập trình và
+                                    khả năng giải quyết vấn đề công nghệ.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certificate-item">
+                            <div class="certificate-image">
+                                <i class="fas fa-code"
+                                    style="font-size: 48px; color: #8e44ad;"></i>
+                            </div>
+                            <div class="certificate-content">
+                                <div class="certificate-title">FPT Denso
+                                    Hackathon</div>
+                                <div class="certificate-issuer">FPT
+                                    Software</div>
+                                <div class="certificate-date">Issued 2024</div>
+                                <div class="certificate-description">
+                                    Chứng nhận Cuộc Thi Denso Factory Hacks.
+                                    Cuộc Thi Denso Factory Hack, một cuộc thi
+                                    đổi mới sáng tạo trong lĩnh vực công nghiệp
+                                    và sản xuất, nơi các thí sinh phát triển các
+                                    giải pháp công nghệ, ứng dụng trí tuệ nhân
+                                    tạo và IoT để tối ưu hóa quy trình sản xuất.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script>
-            window.addEventListener('scroll', function () {
-                const header = document.getElementById('mainHeader');
-                if (window.scrollY > 50) {
-                    header.classList.add('shrink');
-                } else {
-                    header.classList.remove('shrink');
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.classList.add('fade-in');
                 }
             });
-        </script>
+        }, observerOptions);
 
-        <script>
-            const navItems = document.querySelectorAll(".Section4 .Navigate li");
-            const contentLists = document.querySelectorAll(".Section4 > ul:not(.Navigate)");
+        // Observe all animated elements
+        document.querySelectorAll('.section-card').forEach(el => {
+            observer.observe(el);
+        });
 
-            navItems.forEach((item, index) => {
-                item.addEventListener("click", () => {
-                // Bỏ active khỏi tất cả tab
-                navItems.forEach(i => i.classList.remove("active"));
-                contentLists.forEach(list => list.classList.remove("active"));
-
-                // Gán active cho tab được chọn
-                item.classList.add("active");
-                contentLists[index].classList.add("active");
-                });
+        // Add smooth hover effects
+        document.querySelectorAll('.project-item, .award-item, .certificate-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (item.classList.contains('award-item')) {
+                    item.style.transform = 'translateX(5px)';
+                } else {
+                    item.style.transform = 'translateY(-5px)';
+                }
             });
-
-            // Gán mặc định tab đầu tiên active
-            navItems[0].classList.add("active");
-            contentLists[0].classList.add("active");
-        </script>
+            
+            item.addEventListener('mouseleave', () => {
+                if (item.classList.contains('award-item')) {
+                    item.style.transform = 'translateX(0)';
+                } else {
+                    item.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
     </body>
 </html>
