@@ -3,12 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nguyễn Phan Đức Minh - AI Engineer Portfolio</title>
+        
+        <!-- SEO Meta Tags -->
+        <title>Nguyễn Phan Đức Minh - AI Engineer | Machine Learning & Computer Vision Expert</title>
+        <meta name="description" content="AI Engineer specializing in machine learning, computer vision, and deep learning. Experience in healthcare AI, agricultural disease detection, and IoT solutions with 99% accuracy models.">
+        <meta name="keywords" content="AI Engineer, Machine Learning, Computer Vision, Deep Learning, Healthcare AI, Agricultural AI, IoT, TensorFlow, PyTorch, Data Science, Vietnam">
+        <meta name="author" content="Nguyễn Phan Đức Minh">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://minhphannguyen.github.io/portfolio/">
+        
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Nguyễn Phan Đức Minh - AI Engineer Portfolio">
+        <meta property="og:description" content="AI Engineer with expertise in machine learning, computer vision, and deep learning. Building intelligent systems for healthcare, agriculture, and IoT applications.">
+        <meta property="og:type" content="profile">
+        <meta property="og:url" content="https://minhphannguyen.github.io/portfolio/">
+        <meta property="og:image" content="https://minhphannguyen.github.io/portfolio/images/Background.png">
+        <meta property="og:image:alt" content="Nguyễn Phan Đức Minh - AI Engineer">
+        <meta property="og:site_name" content="Minh Phan Portfolio">
+        <meta property="og:locale" content="en_US">
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Nguyễn Phan Đức Minh - AI Engineer Portfolio">
+        <meta name="twitter:description" content="AI Engineer specializing in machine learning, computer vision, and deep learning solutions.">
+        <meta name="twitter:image" content="https://minhphannguyen.github.io/portfolio/images/Background.png">
+        <meta name="twitter:image:alt" content="Nguyễn Phan Đức Minh - AI Engineer">
+        
+        <!-- Additional SEO Tags -->
+        <meta name="theme-color" content="#0066cc">
+        <meta name="msapplication-TileColor" content="#0066cc">
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="images/Background.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/Background.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/Background.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/Background.png">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet">
+            rel="stylesheet"
+            media="print" onload="this.media='all'"
+            crossorigin="anonymous">
         <link rel="stylesheet"
             href="fontawesome-free-6.7.2-web/css/all.min.css">
         <style>
@@ -575,11 +612,52 @@
         .section-card:nth-child(6) { animation-delay: 0.6s; }
         .section-card:nth-child(7) { animation-delay: 0.7s; }
     </style>
+    
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nguyễn Phan Đức Minh",
+        "alternateName": "Minh Phan",
+        "jobTitle": "AI Engineer",
+        "description": "AI Engineer specializing in machine learning, computer vision, and deep learning with expertise in healthcare AI, agricultural disease detection, and IoT solutions.",
+        "url": "https://minhphannguyen.github.io/portfolio/",
+        "image": "https://minhphannguyen.github.io/portfolio/images/Background.png",
+        "email": "SWminh0918195615@gmail.com",
+        "telephone": "+84934190061",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ho Chi Minh City",
+            "addressCountry": "Vietnam"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/minhphannguyen/",
+            "https://github.com/MinhPhanNguyen"
+        ],
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "Machine Learning", 
+            "Deep Learning",
+            "Computer Vision",
+            "Healthcare AI",
+            "Agricultural AI",
+            "IoT Solutions",
+            "TensorFlow",
+            "PyTorch",
+            "Data Science"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "University"
+        }
+    }
+    </script>
     </head>
     <body>
         <div class="container">
             <!-- Profile Header -->
-            <div class="profile-header fade-in">
+            <header class="profile-header fade-in" role="banner">
                 <div class="profile-top">
                     <div class="profile-image"></div>
                     <div class="profile-info">
@@ -619,12 +697,27 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </header>
 
-            <div class="sections-grid">
+            <!-- Navigation Breadcrumb -->
+            <nav aria-label="Page navigation" style="margin-bottom: 20px;">
+                <ol style="list-style: none; display: flex; gap: 10px; color: var(--text-muted); font-size: 0.9rem;">
+                    <li><a href="#about" style="color: var(--primary-color); text-decoration: none;">About</a></li>
+                    <li style="color: var(--text-muted);">•</li>
+                    <li><a href="#education" style="color: var(--primary-color); text-decoration: none;">Education</a></li>
+                    <li style="color: var(--text-muted);">•</li>
+                    <li><a href="#projects" style="color: var(--primary-color); text-decoration: none;">Projects</a></li>
+                    <li style="color: var(--text-muted);">•</li>
+                    <li><a href="#skills" style="color: var(--primary-color); text-decoration: none;">Skills</a></li>
+                    <li style="color: var(--text-muted);">•</li>
+                    <li><a href="#certificates" style="color: var(--primary-color); text-decoration: none;">Certificates</a></li>
+                </ol>
+            </nav>
+
+            <main class="sections-grid" role="main">
                 <!-- About Section -->
-                <div class="section-card fade-in">
-                    <h2 class="section-title">ABOUT</h2>
+                <section class="section-card fade-in" id="about" aria-labelledby="about-title">
+                    <h2 class="section-title" id="about-title">ABOUT</h2>
                     <div class="objective-content">
                         <p>I am an AI Engineer passionate about building
                             intelligent systems that create real-world impact in
@@ -654,11 +747,11 @@
                             Vision, IoT AI Deployment, Data Processing, and API
                             Integration.</p>
                     </div>
-                </div>
+                </section>
 
                 <!-- Education Section -->
-                <div class="section-card fade-in">
-                    <h2 class="section-title">EDUCATION</h2>
+                <section class="section-card fade-in" id="education" aria-labelledby="education-title">
+                    <h2 class="section-title" id="education-title">EDUCATION</h2>
                     <div class="education-item">
                         <div class="education-period">Aug 2022 - June 2026</div>
                         <div class="education-school">Ho Chi Minh City
@@ -668,11 +761,11 @@
                             GPA: 3.75/4.0
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Projects Section -->
-                <div class="section-card fade-in">
-                    <h2 class="section-title">PROJECTS</h2>
+                <!-- Projects Section -->  
+                <section class="section-card fade-in" id="projects" aria-labelledby="projects-title">
+                    <h2 class="section-title" id="projects-title">PROJECTS</h2>
                     <div class="projects-grid">
                         <div class="project-item">
                             <div class="project-header">
@@ -964,8 +1057,8 @@
                 </div>
 
                 <!-- Skills Section -->
-                <div class="section-card fade-in">
-                    <h2 class="section-title">SKILLS</h2>
+                <section class="section-card fade-in" id="skills" aria-labelledby="skills-title">
+                    <h2 class="section-title" id="skills-title">SKILLS</h2>
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h3><i class="fas fa-brain"></i> AI & ML</h3>
@@ -1034,8 +1127,8 @@
                 </div>
 
                 <!-- Certificates Section -->
-                <div class="section-card fade-in">
-                    <h2 class="section-title">CERTIFICATES</h2>
+                <section class="section-card fade-in" id="certificates" aria-labelledby="certificates-title">
+                    <h2 class="section-title" id="certificates-title">CERTIFICATES</h2>
                     <div class="certificates-grid">
                         <div class="certificate-item">
                             <div class="certificate-image">
@@ -1242,5 +1335,6 @@
             });
         });
     </script>
+            </main>
     </body>
 </html>

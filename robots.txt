@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://minhphannguyen.github.io/portfolio/sitemap.xml
+
+# Block access to sensitive files
+Disallow: /*.log$
+Disallow: /*.txt$
+Disallow: /private/
+Disallow: /admin/
+
+# Allow important directories
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fontawesome-free-6.7.2-web/
+
+# Crawl-delay for bots
+Crawl-delay: 1
