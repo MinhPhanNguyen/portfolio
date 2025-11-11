@@ -3,8 +3,13 @@
     <url>
         <loc>https://minhphannguyen.github.io/portfolio/</loc>
         <lastmod>2025-11-11</lastmod>
-        <changefreq>monthly</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+            <image:loc>https://minhphannguyen.github.io/portfolio/images/Background.png</image:loc>
+            <image:title>Nguyễn Phan Đức Minh - AI Engineer Portfolio</image:title>
+            <image:caption>Portfolio của Nguyễn Phan Đức Minh - AI Engineer chuyên về Machine Learning</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://minhphannguyen.github.io/portfolio/#about</loc>
